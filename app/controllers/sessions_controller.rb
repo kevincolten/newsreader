@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_username(params[:username])
     if @user && @user.password_digest == params[:password]
-      login(user)
+      login(@user)
+      redirect_to root_url
     else
       render :new
     end
@@ -14,6 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
+    redirect_to new_session_url
   end
 
 end

@@ -1,5 +1,5 @@
 class FeedsController < ApplicationController
-  before_filter :check_update_time
+  before_filter :check_update_time, :validate_user
 
   def index
     @feeds = Feed.all

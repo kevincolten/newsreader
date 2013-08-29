@@ -12,7 +12,7 @@ NewReader.Routers.Feeds = Backbone.Router.extend({
     var feedsIndexView = new NewReader.Views.FeedsIndex({
       collection: this.feeds
     });
-    $('body').html(feedsIndexView.render().$el);
+    $('#container').html(feedsIndexView.render().$el);
   },
 
   show: function(id) {
@@ -23,7 +23,7 @@ NewReader.Routers.Feeds = Backbone.Router.extend({
       collection: feed.get('entries')
     });
 
-    $('body').html(feedsShowView.render().$el);
+    $('#container').html(feedsShowView.render().$el);
   }
 
 });

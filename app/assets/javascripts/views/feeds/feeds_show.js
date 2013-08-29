@@ -15,7 +15,7 @@ NewReader.Views.FeedsShow = Backbone.View.extend({
   },
 
   refreshCollection: function(event){
-    event.preventDefault;
+    event.preventDefault();
     this.collection.fetch({reset: true});
   },
 

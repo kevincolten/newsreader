@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :password_digest, :session_token, :username
+  attr_accessible :session_token, :username, :password
 
 
   def password=(password)

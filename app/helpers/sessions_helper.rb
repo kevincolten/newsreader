@@ -14,7 +14,7 @@ module SessionsHelper
   end
 
   def logout
-    @current_user.generate_token
+    current_user.generate_token
     session[:token] = nil
     @current_user = nil
   end
