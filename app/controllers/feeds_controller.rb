@@ -23,6 +23,11 @@ class FeedsController < ApplicationController
     render "show.rabl"
   end
 
+  def update
+    @feed = Feed.find(params[:id])
+    @feed.update_attributes()
+  end
+
   def check_update_time
     now = Time.now
     feeds = Feed.all

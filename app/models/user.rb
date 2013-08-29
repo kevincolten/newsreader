@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
   attr_accessible :session_token, :username, :password
 
+  has_many :fav_feeds, :through => :fav_f, :source => :feed
+
+  has_many :fav_f
+
 
   def password=(password)
     self.password_digest = password

@@ -24,7 +24,6 @@ class Feed < ActiveRecord::Base
     # reloads entries
     begin
       feed_data = SimpleRSS.parse(open(url))
-      p feed_data
       self.title = feed_data.title
       self.updated_at = Time.now
       self.save!

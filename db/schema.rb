@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130828221741) do
+ActiveRecord::Schema.define(:version => 20130829000607) do
 
   create_table "entries", :force => true do |t|
     t.string   "guid",         :null => false
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(:version => 20130828221741) do
 
   add_index "entries", ["feed_id"], :name => "index_entries_on_feed_id"
   add_index "entries", ["guid"], :name => "index_entries_on_guid", :unique => true
+
+  create_table "favorite_feeds", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "feed_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "favorite_feeds", ["feed_id"], :name => "index_favorite_feeds_on_feed_id"
+  add_index "favorite_feeds", ["user_id"], :name => "index_favorite_feeds_on_user_id"
 
   create_table "feeds", :force => true do |t|
     t.string   "url",         :null => false

@@ -5,6 +5,9 @@
     <a href="#/feeds/<%= feed.escape("id") %>">
       <%= feed.escape("title") %>
     </a>
+    <button class="favorite" data-id="<%= feed.escape("id") %>">
+      Favorite
+    </button>
   </li>
 <% }); %>
 </ul>
